@@ -63,7 +63,7 @@ public class CssdkFileUtils {
         if(isTSFileExists(csClient, newTSVPath)) {
             CSFile csFile = csClient.getFile(new CSVPath(newTSVPath));
             if(csFile instanceof CSSimpleFile){
-                csSimpleFile = (CSSimpleFile) csClient.getFile(new CSVPath(newTSVPath));
+                csSimpleFile = (CSSimpleFile) csFile;
                 if(log.isDebugEnabled())  log.debug("File name existing on TS : " + csSimpleFile.getVPath().toString());
             }else if(csFile instanceof CSHole){
                 if(log.isDebugEnabled()) log.debug("File is instance of CSHole(deleted in workarea) so create a new file. ");
